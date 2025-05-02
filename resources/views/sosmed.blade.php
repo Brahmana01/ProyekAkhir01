@@ -25,10 +25,10 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fal fa-map-location-dot"></i>
+                                    <i class="fab fa-instagram"></i>
                                 </div>
                                 <div class="contact-info-content">
-                                    <h5>ALamat Kampus</h5>
+                                    <h5>Instagram</h5>
                                     <p>Sitoluama, Laguboti,Kab.Toba</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fal fa-phone-volume"></i>
+                                    <i class="fab fa-facebook"></i>
                                 </div>
                                 <div class="contact-info-content">
                                     <h5>Call Us</h5>
@@ -47,7 +47,7 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fal fa-envelopes"></i>
+                                    <i class="fab fa-youtube"></i>
                                 </div>
                                 <div class="contact-info-content">
                                     <h5>Email Us</h5>
@@ -58,7 +58,7 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fal fa-alarm-clock"></i>
+                                    <i class="fas fa-home"></i>
                                 </div>
                                 <div class="contact-info-content">
                                     <h5>Open Time</h5>

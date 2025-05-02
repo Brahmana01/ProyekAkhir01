@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\GalleryController; // Tambahkan ini
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\PrestasiController; // Import PrestasiController
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,7 @@ Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('adm
 
 // Route untuk dashboard admin (perlu login)
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard')
-    ->middleware('auth:admin');  // Middleware disini
+    ->middleware('auth:admin');
 
 // CRUD GALERI (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
 Route::middleware(['auth:admin'])->group(function () {
@@ -46,7 +48,29 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::patch('/admin/galleries/{gallery}', [GalleryController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
     Route::delete('/admin/galleries/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
 
+    // CRUD VIDEO (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
+    Route::get('/admin/videos', [VideoController::class, 'index'])->name('admin.videos.index');
+    Route::get('/admin/videos/create', [VideoController::class, 'create'])->name('admin.videos.create');
+    Route::post('/admin/videos', [VideoController::class, 'store'])->name('admin.videos.store');
+    Route::get('/admin/videos/{video}', [VideoController::class, 'show'])->name('admin.videos.show');
+    Route::get('/admin/videos/{video}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
+    Route::put('/admin/videos/{video}', [VideoController::class, 'update'])->name('admin.videos.update');
+    Route::patch('/admin/videos/{video}', [VideoController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
+    Route::delete('/admin/videos/{video}', [VideoController::class, 'destroy'])->name('admin.videos.destroy');
+
+    // CRUD PRESTASI (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
+    Route::get('/admin/prestasi', [PrestasiController::class, 'index'])->name('admin.prestasies.index');
+    Route::get('/admin/prestasi/create', [PrestasiController::class, 'create'])->name('admin.prestasies.create');
+    Route::post('/admin/prestasi', [PrestasiController::class, 'store'])->name('admin.prestasies.store');
+    Route::get('/admin/prestasi/{prestasi}', [PrestasiController::class, 'show'])->name('admin.prestasies.show');
+    Route::get('/admin/prestasi/{prestasi}/edit', [PrestasiController::class, 'edit'])->name('admin.prestasies.edit');
+    Route::put('/admin/prestasi/{prestasi}', [PrestasiController::class, 'update'])->name('admin.prestasies.update');
+    Route::patch('/admin/prestasi/{prestasi}', [PrestasiController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
+    Route::delete('/admin/prestasi/{prestasi}', [PrestasiController::class, 'destroy'])->name('admin.prestasies.destroy');
 });
+
+// Route untuk menampilkan video ke publik
+Route::get('/videos', [VideoController::class, 'showPublic'])->name('videos.showPublic');
 
 // Route untuk halaman statis lainnya (menggunakan cara yang lebih ringkas)
 $staticPages = [
@@ -66,6 +90,7 @@ $staticPages = [
     'club.html' => 'club',
     'coming-soon.html' => 'coming-soon',
     'contact.html' => 'contact',
+    'sosmed.html' => 'sosmed',
     'course.html' => 'course',
     'course-2.html' => 'course-2',
     'course-single-2.html' => 'course-single-2',
@@ -90,7 +115,9 @@ $staticPages = [
     'pricing.html' => 'pricing',
     'privacy.html' => 'privacy',
     'research-single.html' => 'research-single',
-    'research.html' => 'research',
+    'prestasi.html' => 'prestasi ',
+    'kerjasama.html' => 'kerjasama',
+    'visimisi.html' => 'visimisi',
     'scholarship.html' => 'scholarship',
     'student-activities.html' => 'student-activities',
     'teacher-single.html' => 'teacher-single',

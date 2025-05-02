@@ -122,7 +122,45 @@ Table of contents
   --footer-text-color: #F5FAFF;
 }
 
+.kurikulum-container {
+    display: flex;              /* Mengaktifkan flexbox */
+    flex-wrap: wrap;            /* Memungkinkan kolom untuk turun ke bawah jika tidak cukup ruang */
+    justify-content: flex-start; /* Menjaga agar kolom tetap berada di kiri */
+}
 
+.semester-column {
+    width: 45%;             /* Lebar setiap kolom (sedikit kurang dari 50% untuk memberi ruang di antara kolom */
+    margin-bottom: 20px;    /* Jarak antar semester */
+    margin-right: 20px;     /* Jarak antara kolom kanan dan kiri */
+}
+
+.semester-header {
+    font-size: 1.2em;         /* Ukuran font untuk judul semester */
+    font-weight: bold;        /* Tebal */
+    margin-bottom: 10px;    /* Jarak antara judul semester dan tabel */
+}
+
+.table-k {
+  width: 100%; /* Memastikan tabel memenuhi lebar kolom */
+  border-collapse: collapse; /* Menggabungkan border sel */
+  margin-bottom: 10px;
+}
+
+.row-k {
+  display: flex;
+}
+
+.cell-k {
+  border: 1px solid #ddd; /* Tambahkan border untuk tampilan seperti tabel */
+  padding: 8px;
+  text-align: left;
+  flex: 1; /* Setiap cell memiliki lebar yang sama */
+}
+
+.header-row-k {
+  background-color: #f2f2f2; /* Warna latar belakang untuk header */
+  font-weight: bold;
+}
 
 /*====================
 3. General css

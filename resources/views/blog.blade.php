@@ -39,12 +39,6 @@
                                 <img src="assets/img/blog/01.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>
@@ -59,12 +53,6 @@
                                 <img src="assets/img/blog/02.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>
@@ -79,12 +67,6 @@
                                 <img src="assets/img/blog/03.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>
@@ -99,12 +81,6 @@
                                 <img src="assets/img/blog/01.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>
@@ -119,12 +95,6 @@
                                 <img src="assets/img/blog/02.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>
@@ -139,12 +109,6 @@
                                 <img src="assets/img/blog/03.jpg" alt="Thumb">
                             </div>
                             <div class="blog-item-info">
-                                <div class="blog-item-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                    </ul>
-                                </div>
                                 <h4 class="blog-title">
                                     <a href="blog-single.html">There are many variations passage have suffered available.</a>
                                 </h4>

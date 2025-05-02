@@ -5,10 +5,10 @@
     <!-- breadcrumb -->
     <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/01.jpg)">
         <div class="container">
-            <h2 class="breadcrumb-title">Our Facilities</h2>
+            <h2 class="breadcrumb-title">Our Teamwork</h2>
             <ul class="breadcrumb-menu">
                 <li><a href="index.html">Home</a></li>
-                <li class="active">Our Facilities</li>
+                <li class="active">Our Teamwork</li>
             </ul>
         </div>
     </div>

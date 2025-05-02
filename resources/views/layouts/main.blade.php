@@ -102,7 +102,7 @@
                                     <ul class="dropdown-menu fade-down">
                                         <li><a class="dropdown-item" href="academic-single.html">Sejarah</a></li>
                                         <li><a class="dropdown-item" href="about.html">Tentang D3 TI</a></li>
-                                        <li><a class="dropdown-item" href="faculty-single.html">Visi Misi</a></li>
+                                        <li><a class="dropdown-item" href="visimisi.html">Visi Misi</a></li>
                                         <li><a class="dropdown-item" href="faculty.html">Struktur organisasi</a></li>
                                         <li><a class="dropdown-item" href="academic-single.html">Tujuan</a></li>
                                         <li><a class="dropdown-item" href="academic-single.html">Strategi Pembelajaran</a></li>
@@ -122,7 +122,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dokumentasi</a>
                                 <ul class="dropdown-menu fade-down">
                                     <li><a class="dropdown-item" href="{{route('galleries.index')}}">Galeri</a></li>
-                                    <li><a class="dropdown-item" href="how-to-apply.html">Video</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('videos.showPublic')}}">Video</a></li>
                                 </ul>
                             </li>
                             
@@ -130,11 +130,11 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HubConnect</a>
                                 <ul class="dropdown-menu fade-down">
                                     <li><a class="dropdown-item" href="contact.html">Kontak</a></li>
-                                    <li><a class="dropdown-item" href="contact.html">Sosial Media</a></li>
+                                    <li><a class="dropdown-item" href="sosmed.html">Sosial Media</a></li>
                                 </ul>
                             </li>
                             
-                            <li class="nav-item"><a class="nav-link" href="research.html">Prestasi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="prestasi.html">Prestasi</a></li>
 
                             <li class="nav-item"><a class="nav-link" href="course-2.html">Prospek_Karir</a></li>
 
@@ -144,10 +144,10 @@
                             <li class="nav-item"><a class="nav-link" href="facility.html">Fasilitas</a></li> 
 
 
-                            <li class="nav-item"><a class="nav-link" href="facility.html">Beasiswa</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="scholarship.html">Beasiswa</a></li> 
 
 
-                            <li class="nav-item"><a class="nav-link" href="facility.html">Kerjasama</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="kerjasama.html">Kerjasama</a></li> 
                         </ul>
                     </div>
                 </div>
