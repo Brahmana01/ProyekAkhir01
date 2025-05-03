@@ -90,20 +90,25 @@
                                         </div>
 
                                     </div>
+
                                     <div class="my-4">
-                                        <h3 class="mb-3">Kompetensi</h3>
-                                        <ul class="department-single-list">
-                                            <p>Kompetensi lulusan Program Studi Teknologi Informasi Diploma Tiga  yaitu:</p>
-                                            <li><i class="far fa-check"></i>Mampu membangun, mengembangkan dan memelihara perangkat
-                                                 lunak dengan mengikuti dan menerapkan metode rekayasa perangkat 
-                                                 lunak yang baik dan benar, yang mencakup perangkat lunak pada 
-                                                 platform desktop, web, dan mobile.</li>
-                                            <li><i class="far fa-check"></i>Selain mampu dalam bidangnya, juga mempunyai landasan
-                                                 yang cukup terhadap semua bidang dasar informatika: jaringan komputer, 
-                                                 sistem informasi, dan teknologi informasi.</li>
-                                            <li><i class="far fa-check"></i>Mampu untuk bekerja dalam tim.
-                                            </li>
-                                            <li><i class="far fa-check"></i>Mempunyai softskill yang sesuai yaitu disiplin dan 
+                                        <h3 class="mb-3"><strong>Kompetensi</strong></h3>
+                                        <h5>Kompetensi lulusan Program Studi Teknologi Informasi Diploma Tiga  yaitu:</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><i class="fas fa-check-circle mr-2 text-success"></i> 
+                                                Mampu membangun, mengembangkan 
+                                                dan memelihara perangkat
+                                                lunak dengan mengikuti dan menerapkan metode rekayasa perangkat 
+                                                lunak yang baik dan benar, yang mencakup perangkat lunak pada 
+                                                platform desktop, web, dan mobile.</li>
+                                            <li class="list-group-item"><i class="fas fa-check-circle mr-2 text-success"></i> 
+                                                Selain mampu dalam bidangnya, juga mempunyai landasan
+                                                yang cukup terhadap semua bidang dasar informatika: jaringan komputer, 
+                                                sistem informasi, dan teknologi informasi.</li>
+                                            <li class="list-group-item"><i class="fas fa-check-circle mr-2 text-success"></i> 
+                                                Mampu untuk bekerja dalam tim.</li>
+                                            <li class="list-group-item"><i class="fas fa-check-circle mr-2 text-success"></i> 
+                                                Mempunyai softskill yang sesuai yaitu disiplin dan 
                                                 sikap kerja yang profesional</li>
                                         </ul>
                                     </div>

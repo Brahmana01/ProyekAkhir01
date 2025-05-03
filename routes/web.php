@@ -6,7 +6,8 @@ use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
-use App\Http\Controllers\PrestasiController; // Import PrestasiController
+use App\Http\Controllers\Admin\PrestasiController; // Import PrestasiController di namespace yang benar
+use App\Http\Controllers\PrestasiController as PublicPrestasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+//Route untuk menampilkan galleri ke publik
 Route::get('/galleries', [GalleryController::class, 'indexPublic'])->name('galleries.index');
+
+// Route untuk menampilkan video ke publik
+Route::get('/videos', [VideoController::class, 'showPublic'])->name('videos.showPublic');
+
+// Route untuk menampilkan prestasi ke publik
+Route::get('/prestasi', [PublicPrestasiController::class, 'index'])->name('prestasies.indexPublic');
 
 // Route untuk login admin
 Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
@@ -36,96 +44,70 @@ Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('adm
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard')
     ->middleware('auth:admin');
 
-// CRUD GALERI (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
-Route::middleware(['auth:admin'])->group(function () {
-
-    Route::get('/admin/galleries', [GalleryController::class, 'index'])->name('admin.galleries.index');
-    Route::get('/admin/galleries/create', [GalleryController::class, 'create'])->name('admin.galleries.create');
-    Route::post('/admin/galleries', [GalleryController::class, 'store'])->name('admin.galleries.store');
-    Route::get('/admin/galleries/{gallery}', [GalleryController::class, 'show'])->name('admin.galleries.show');
-    Route::get('/admin/galleries/{gallery}/edit', [GalleryController::class, 'edit'])->name('admin.galleries.edit');
-    Route::put('/admin/galleries/{gallery}', [GalleryController::class, 'update'])->name('admin.galleries.update');
-    Route::patch('/admin/galleries/{gallery}', [GalleryController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
-    Route::delete('/admin/galleries/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
-
-    // CRUD VIDEO (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
-    Route::get('/admin/videos', [VideoController::class, 'index'])->name('admin.videos.index');
-    Route::get('/admin/videos/create', [VideoController::class, 'create'])->name('admin.videos.create');
-    Route::post('/admin/videos', [VideoController::class, 'store'])->name('admin.videos.store');
-    Route::get('/admin/videos/{video}', [VideoController::class, 'show'])->name('admin.videos.show');
-    Route::get('/admin/videos/{video}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
-    Route::put('/admin/videos/{video}', [VideoController::class, 'update'])->name('admin.videos.update');
-    Route::patch('/admin/videos/{video}', [VideoController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
-    Route::delete('/admin/videos/{video}', [VideoController::class, 'destroy'])->name('admin.videos.destroy');
-
-    // CRUD PRESTASI (didefinisikan secara manual) - Hanya bisa diakses jika sudah login
-    Route::get('/admin/prestasi', [PrestasiController::class, 'index'])->name('admin.prestasies.index');
-    Route::get('/admin/prestasi/create', [PrestasiController::class, 'create'])->name('admin.prestasies.create');
-    Route::post('/admin/prestasi', [PrestasiController::class, 'store'])->name('admin.prestasies.store');
-    Route::get('/admin/prestasi/{prestasi}', [PrestasiController::class, 'show'])->name('admin.prestasies.show');
-    Route::get('/admin/prestasi/{prestasi}/edit', [PrestasiController::class, 'edit'])->name('admin.prestasies.edit');
-    Route::put('/admin/prestasi/{prestasi}', [PrestasiController::class, 'update'])->name('admin.prestasies.update');
-    Route::patch('/admin/prestasi/{prestasi}', [PrestasiController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
-    Route::delete('/admin/prestasi/{prestasi}', [PrestasiController::class, 'destroy'])->name('admin.prestasies.destroy');
+// CRUD ADMIN (didefinisikan secara RESOURCE) - Hanya bisa diakses jika sudah login
+Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('galleries', GalleryController::class);
+    Route::resource('videos', VideoController::class);
+    Route::resource('prestasi', PrestasiController::class);
 });
-
-// Route untuk menampilkan video ke publik
-Route::get('/videos', [VideoController::class, 'showPublic'])->name('videos.showPublic');
 
 // Route untuk halaman statis lainnya (menggunakan cara yang lebih ringkas)
 $staticPages = [
-    'index.html' => 'index',
-    '404.html' => '404',
-    'about.html' => 'about',
-    'academic-single.html' => 'academic-single',
-    'academic.html' => 'academic',
-    'alumni.html' => 'alumni',
-    'application-form.html' => 'application-form',
-    'athletics.html' => 'athletics',
-    'blog.html' => 'blog',
-    'blog-single.html' => 'blog-single',
-    'campus-life.html' => 'campus-life',
-    'campus-tour.html' => 'campus-tour',
-    'club-single.html' => 'club-single',
-    'club.html' => 'club',
-    'coming-soon.html' => 'coming-soon',
-    'contact.html' => 'contact',
-    'sosmed.html' => 'sosmed',
-    'course.html' => 'course',
-    'course-2.html' => 'course-2',
-    'course-single-2.html' => 'course-single-2',
-    'course-single.html' => 'course-single',
-    'event-single.html' => 'event-single',
-    'event.html' => 'event',
-    'facility-single.html' => 'facility-single',
-    'facility.html' => 'facility',
-    'faculty-single.html' => 'faculty-single',
-    'faculty.html' => 'faculty',
-    'faq.html' => 'faq',
-    'forgot-password.html' => 'forgot-password',
-    'gallery.html' => 'gallery',
-    'health-care.html' => 'health-care',
-    'how-to-apply.html' => 'how-to-apply',
-    'index.html' => 'index',
-    'kurikulum.html' => 'kurikulum',
-    'notice-board.html' => 'notice-board',
-    'our-fund.html' => 'our-fund',
-    'portfolio-single.html' => 'portfolio-single',
-    'portfolio.html' => 'portfolio',
-    'pricing.html' => 'pricing',
-    'privacy.html' => 'privacy',
-    'research-single.html' => 'research-single',
-    'prestasi.html' => 'prestasi ',
-    'kerjasama.html' => 'kerjasama',
-    'visimisi.html' => 'visimisi',
-    'scholarship.html' => 'scholarship',
-    'student-activities.html' => 'student-activities',
-    'teacher-single.html' => 'teacher-single',
-    'teacher-2.html' => 'teacher-2',
-    'teacher.html' => 'teacher',
-    'terms.html' => 'terms',
-    'testimonials.html' => 'testimonials',
-    'tuitioin-fee.html' => 'tuition-fee',
+    'index' => 'index',
+    '404' => '404',
+    'about' => 'about',
+    'strategi' => 'strategi',
+    'strukturorganisasi' => 'strukturorganisasi',
+    'tujuan' => 'tujuan',
+    'sejarah' => 'sejarah',
+    'academic' => 'academic',
+    'alumni' => 'alumni',
+    'application-form' => 'application-form',
+    'athletics' => 'athletics',
+    'blog' => 'blog',
+    'blog-single' => 'blog-single',
+    'campus-life' => 'campus-life',
+    'campus-tour' => 'campus-tour',
+    'club-single' => 'club-single',
+    'club' => 'club',
+    'coming-soon' => 'coming-soon',
+    'contact' => 'contact',
+    'sosmed' => 'sosmed',
+    'course' => 'course',
+    'course-2' => 'course-2',
+    'course-single-2' => 'course-single-2',
+    'course-single' => 'course-single',
+    'event-single' => 'event-single',
+    'event' => 'event',
+    'facility-single' => 'facility-single',
+    'facility' => 'facility',
+    'faculty-single' => 'faculty-single',
+    'faculty' => 'faculty',
+    'faq' => 'faq',
+    'forgot-password' => 'forgot-password',
+    'gallery' => 'gallery',
+    'health-care' => 'health-care',
+    'how-to-apply' => 'how-to-apply',
+    'index' => 'index',
+    'kurikulum' => 'kurikulum',
+    'notice-board' => 'notice-board',
+    'our-fund' => 'our-fund',
+    'portfolio-single' => 'portfolio-single',
+    'portfolio' => 'portfolio',
+    'pricing' => 'pricing',
+    'privacy' => 'privacy',
+    'research-single' => 'research-single',
+    'prestasi' => 'prestasi',
+    'kerjasama' => 'kerjasama',
+    'visimisi' => 'visimisi',
+    'scholarship' => 'scholarship',
+    'student-activities' => 'student-activities',
+    'teacher-single' => 'teacher-single',
+    'teacher-2' => 'teacher-2',
+    'teacher' => 'teacher',
+    'terms' => 'terms',
+    'testimonials' => 'testimonials',
+    'tuitioin-fee' => 'tuition-fee',
 ];
 
 foreach ($staticPages as $url => $view) {

@@ -70,7 +70,7 @@
                             </div>
                             <div class="research-content">
                                 <h3 class="research-title">
-                                    <a>Humanities And Social Sciences</a>
+                                    <a href="#">Humanities And Social Sciences</a>
                                 </h3>
                                 <p class="research-text">
                                     There are many variations of passages orem psum available but the majority have

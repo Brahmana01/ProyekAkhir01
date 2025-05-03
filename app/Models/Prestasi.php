@@ -9,10 +9,9 @@ class Prestasi extends Model
 {
     use HasFactory;
 
-    protected $table = 'prestasies';
     protected $fillable = [
         'judul',
-        'foto',
         'deskripsi',
+        'foto',
     ];
 }

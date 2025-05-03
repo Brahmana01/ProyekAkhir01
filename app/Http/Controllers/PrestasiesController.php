@@ -45,7 +45,7 @@ class PrestasiController extends Controller
         $fotoPath = $request->file('foto')->store('public/prestasies');
         $fotoName = basename($fotoPath);
 
-        Prestasi::create([
+        Prestasies::create([
             'judul' => $request->judul,
             'foto' => $fotoName,
             'deskripsi' => $request->deskripsi,

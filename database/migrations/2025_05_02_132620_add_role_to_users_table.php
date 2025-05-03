@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prestasies', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_prestasi');
-            $table->text('deskripsi_prestasi');
-            $table->string('foto')->nullable(); // Simpan nama file foto
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prestasies');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

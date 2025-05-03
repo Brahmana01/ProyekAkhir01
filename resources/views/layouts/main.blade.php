@@ -85,14 +85,14 @@
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container position-relative">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index">
                         <img src="http://www.del.ac.id/wp-content/uploads/2015/06/logox.png"  alt="D3 Teknologi Informasi">    
                     </a>
                     
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link active" href="index.html">Home</a>
+                                <a class="nav-link active" href="index">Home</a>
                             </li>
 
                                 <li class="nav-item dropdown">
@@ -100,23 +100,23 @@
                                     <div class="mega-content">
                                     <div class="container-fluid">
                                     <ul class="dropdown-menu fade-down">
-                                        <li><a class="dropdown-item" href="academic-single.html">Sejarah</a></li>
-                                        <li><a class="dropdown-item" href="about.html">Tentang D3 TI</a></li>
-                                        <li><a class="dropdown-item" href="visimisi.html">Visi Misi</a></li>
-                                        <li><a class="dropdown-item" href="faculty.html">Struktur organisasi</a></li>
-                                        <li><a class="dropdown-item" href="academic-single.html">Tujuan</a></li>
-                                        <li><a class="dropdown-item" href="academic-single.html">Strategi Pembelajaran</a></li>
+                                        <li><a class="dropdown-item" href="sejarah">Sejarah</a></li>
+                                        <li><a class="dropdown-item" href="about">Tentang D3 TI</a></li>
+                                        <li><a class="dropdown-item" href="visimisi">Visi Misi</a></li>
+                                        <li><a class="dropdown-item" href="strukturorganisasi">Struktur organisasi</a></li>
+                                        <li><a class="dropdown-item" href="tujuan">Tujuan</a></li>
+                                        <li><a class="dropdown-item" href="strategi">Strategi Pembelajaran</a></li>
                                     </ul>
                                 </li>
 
                             
-                            <li class="nav-item"><a class="nav-link" href="kurikulum.html">Kurikulum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kurikulum">Kurikulum</a></li>
       
-                            <li class="nav-item"><a class="nav-link" href="course.html">Berita</a></li>
+                            <li class="nav-item"><a class="nav-link" href="course">Berita</a></li>
   
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Pengumuman</a></li>      
+                            <li class="nav-item"><a class="nav-link" href="blog">Pengumuman</a></li>      
                             
-                            <li class="nav-item"><a class="nav-link" href="teacher.html">Lecturers</a></li>     
+                            <li class="nav-item"><a class="nav-link" href="teacher">Lecturers</a></li>     
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dokumentasi</a>
@@ -129,25 +129,25 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HubConnect</a>
                                 <ul class="dropdown-menu fade-down">
-                                    <li><a class="dropdown-item" href="contact.html">Kontak</a></li>
-                                    <li><a class="dropdown-item" href="sosmed.html">Sosial Media</a></li>
+                                    <li><a class="dropdown-item" href="contact">Kontak</a></li>
+                                    <li><a class="dropdown-item" href="sosmed">Sosial Media</a></li>
                                 </ul>
                             </li>
                             
-                            <li class="nav-item"><a class="nav-link" href="prestasi.html">Prestasi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="prestasi">Prestasi</a></li>
 
-                            <li class="nav-item"><a class="nav-link" href="course-2.html">Prospek_Karir</a></li>
+                            <li class="nav-item"><a class="nav-link" href="course-2">Prospek_Karir</a></li>
 
-                            <li class="nav-item"><a class="nav-link" href="alumni.html">Alumni</a></li>
-
-
-                            <li class="nav-item"><a class="nav-link" href="facility.html">Fasilitas</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="alumni">Alumni</a></li>
 
 
-                            <li class="nav-item"><a class="nav-link" href="scholarship.html">Beasiswa</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="facility">Fasilitas</a></li> 
 
 
-                            <li class="nav-item"><a class="nav-link" href="kerjasama.html">Kerjasama</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="scholarship">Beasiswa</a></li> 
+
+
+                            <li class="nav-item"><a class="nav-link" href="kerjasama">Kerjasama</a></li> 
                         </ul>
                     </div>
                 </div>

@@ -27,16 +27,16 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group">
-                                        <label for="judul">Title:</label>
+                                        <label for="judul">Judul:</label>
                                         <input type="text" class="form-control" id="judul" name="judul" value="{{ $prestasi->judul }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="deskripsi">Description:</label>
-                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required>{{ $prestasi->deskripsi }}</textarea>
+                                        <label for="deskripsi">Deskripsi:</label>
+                                        <textarea class="form-control" id="deskripsi" name="deskripsi">{{ $prestasi->deskripsi }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="foto">Foto:</label>
-                                        <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*">
+                                        <input type="file" class="form-control-file" id="foto" name="foto">
                                         @if($prestasi->foto)
                                             <img src="{{ asset('storage/prestasi/' . $prestasi->foto) }}" alt="{{ $prestasi->judul }}" width="100">
                                         @endif

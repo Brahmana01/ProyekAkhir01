@@ -3,7 +3,7 @@
 
 <head>
     @include('admin.head')
-    <title>Admin - Create New Prestasi</title>
+    <title>Admin - Tambah Prestasi</title>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -18,26 +18,26 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Create New Prestasi</h6>
+                                <h6 class="text-white text-capitalize ps-3">Tambah Prestasi</h6>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="container">
-                                <form action="{{ route('admin.prestasies.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin.prestasi.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="judul">Title:</label>
+                                        <label for="judul">Judul:</label>
                                         <input type="text" class="form-control" id="judul" name="judul" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="deskripsi">Description:</label>
+                                        <label for="deskripsi">Deskripsi:</label>
                                         <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="foto">Foto:</label>
-                                        <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*">
+                                        <input type="file" class="form-control-file" id="foto" name="foto" required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
                             </div>
                         </div>
