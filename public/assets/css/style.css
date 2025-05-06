@@ -92,7 +92,10 @@ Table of contents
 
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-
+.contact-info-icon a {
+  z-index: 10; /* Contoh nilai z-index */
+  position: relative; /* Penting untuk z-index bekerja */
+}
 /*====================
 2. Theme variables
 ======================*/

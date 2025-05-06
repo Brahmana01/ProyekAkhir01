@@ -30,12 +30,44 @@
             <!-- Prestasi Menu -->
             <li class="nav-item">
                 <a class="nav-link text-dark" href="{{ route('admin.prestasi.index') }}">
-                    <i class="material-symbols-rounded opacity-5">emoji_events</i> <!-- Ganti ikon sesuai keinginan -->
+                    <i class="material-symbols-rounded opacity-5">emoji_events</i>
                     <span class="nav-link-text ms-1">Prestasi</span>
                 </a>
             </li>
-            <!-- End Prestasi Menu -->
-  
+            <!-- Berita Menu -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{{ route('admin.beritas.index') }}">
+                    <i class="material-symbols-rounded opacity-5">article</i> <!-- Ganti ikon sesuai keinginan -->
+                    <span class="nav-link-text ms-1">Berita</span>
+                </a>
+            </li>
+            <!-- Pengumuman Menu -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{{ route('admin.pengumuman.index') }}">
+                    <i class="material-symbols-rounded opacity-5">announcement</i> <!-- Ganti ikon sesuai keinginan -->
+                    <span class="nav-link-text ms-1">Pengumuman</span>
+                </a>
+            </li>
+            <!-- End Pengumuman Menu -->
+
+            <!-- Alumni Menu -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{{ route('admin.alumni.index') }}">
+                    <i class="material-symbols-rounded opacity-5">school</i> <!-- Ganti ikon sesuai keinginan -->
+                    <span class="nav-link-text ms-1">Alumni</span>
+                </a>
+            </li>
+            <!-- End Alumni Menu -->
+
+            <!-- Kemitraan Menu (Tambahkan Ini) -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="{{ route('admin.kemitraan.index') }}">
+                    <i class="material-symbols-rounded opacity-5">handshake</i> <!-- Ganti ikon sesuai keinginan -->
+                    <span class="nav-link-text ms-1">Kemitraan</span>
+                </a>
+            </li>
+            <!-- End Kemitraan Menu -->
+
             <li class="nav-item">
                 <a class="nav-link text-dark" href="../pages/tables.html">
                     <i class="material-symbols-rounded opacity-5">table_view</i>
@@ -95,4 +127,4 @@
             <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
         </div>
     </div>
-  </aside>
+</aside>

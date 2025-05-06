@@ -1,22 +1,18 @@
 @include('layouts.main')
 
-
-
     <main class="main">
 
         <!-- breadcrumb -->
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/01.jpg)">
+        <div class="site-breadcrumb" style="background: url({{ asset('assets/img/breadcrumb/01.jpg') }})">
             <div class="container">
-                <h2 class="breadcrumb-title">Our Blog</h2>
+                <h2 class="breadcrumb-title">Pengumuman</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Our Blog</li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li class="active">Pengumuman</li>
                 </ul>
             </div>
         </div>
         <!-- breadcrumb end -->
-
-
 
         <!-- blog area -->
         <div class="blog-area py-120">
@@ -24,116 +20,39 @@
                 <div class="row">
                     <div class="col-lg-6 mx-auto">
                         <div class="site-heading text-center">
-                            <span class="site-title-tagline"><i class="far fa-book-open-reader"></i> Our Blog</span>
-                            <h2 class="site-title">Latest News & <span>Blog</span></h2>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of
-                                a page when looking at its layout.</p>
+                            <span class="site-title-tagline"><i class="far fa-bullhorn"></i> Pengumuman</span>
+                            <h2 class="site-title">Pengumuman <span>Terbaru</span></h2>
+                            <p>Informasi terbaru dan penting dari kami.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    @foreach($pengumuman as $item)
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
+                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> {{ $item->tanggal_update_pengumuman }}</div>
                             <div class="blog-item-img">
-                                <img src="assets/img/blog/01.jpg" alt="Thumb">
+                                @if($item->gambar)
+                                    <img src="{{ asset('storage/pengumuman/' . $item->gambar) }}" alt="{{ $item->judul_pengumuman }}">
+                                @else
+                                    <img src="{{ asset('assets/img/default-image.jpg') }}" alt="No Image"> <!-- Gambar default jika tidak ada -->
+                                @endif
                             </div>
                             <div class="blog-item-info">
                                 <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
+                                    <a href="{{ route('pengumuman.showPublic', $item->id) }}">{{ $item->judul_pengumuman }}</a>
                                 </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
+                                <a class="theme-btn" href="{{ route('pengumuman.showPublic', $item->id) }}">Lihat Selengkapnya <i class="fas fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".50s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/02.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
-                                </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".75s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/03.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
-                                </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/01.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
-                                </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".50s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/02.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
-                                </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".75s">
-                            <div class="blog-date"><i class="fal fa-calendar-alt"></i> June 18, 2024</div>
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog/03.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-item-info">
-                                <h4 class="blog-title">
-                                    <a href="blog-single.html">There are many variations passage have suffered available.</a>
-                                </h4>
-                                <a class="theme-btn" href="blog-single.html">Read More<i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <!-- pagination -->
                 <div class="pagination-area">
                     <div aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
-                                </a>
-                            </li>
+                            {{ $pengumuman->links() }}
                         </ul>
                     </div>
                 </div>

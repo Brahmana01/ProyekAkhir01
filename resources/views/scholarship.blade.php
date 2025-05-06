@@ -26,7 +26,10 @@
                     </div>
                     <div class="my-4">
                         <h3 class="mb-2">Scholarships</h3>
-                        <p>We are the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted.</p>
+                        <p>Institut Teknologi Del (IT Del) menyediakan berbagai jenis 
+                            beasiswa bagi mahasiswa berprestasi maupun yang membutuhkan 
+                            bantuan finansial, sebagai bentuk komitmen dalam mendukung 
+                            akses pendidikan tinggi yang berkualitas dan merata.</p>
                     </div>
                     <div class="mb-4">
                         <h3 class="mb-5">Scholarships Sources</h3>
@@ -36,7 +39,7 @@
                                     <div class="scholarship-icon">
                                         <img src="assets/img/icon/scholarship.svg" alt="">
                                     </div>
-                                    <h4>Eduka Scholarships</h4>
+                                    <h4>IT Del's Scholarships</h4>
                                     <p>
                                         There are many variations of passages available but the majority have suffered alteration in some form by injected humour randomised words which don't look even slightly believable. 
                                     </p>
@@ -79,17 +82,16 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="details-item">
-                                <h3 class="mb-3">Guidance and Advice</h3>
+                                <h3 class="mb-3">Panduan dan Saran</h3>
                                 <p>
                                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. 
                                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
                                 </p>
-                                <a href="#" class="theme-btn mt-4">Apply For Scholarship<i class="fas fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="details-item">
-                                <h3 class="mb-3">Scholarships Requirements</h3>
+                                <h3 class="mb-3">Ketentuan Beasiswa</h3>
                                 <p>
                                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
                                 </p>

@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Prestasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class PrestasiController extends Controller
+class PrestasiesController extends Controller
 {
+    public function indexPublic()
+    {
+        $prestasies = Prestasi::latest()->paginate(10);
+        return view('prestasi', compact('prestasies'));
+    }
+
     /**
      * Display a listing of the resource.
      */

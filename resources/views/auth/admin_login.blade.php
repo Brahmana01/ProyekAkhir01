@@ -68,9 +68,9 @@
                                     <a href="tel:+620632331234"><i class="far fa-phone-volume"></i> 0632-331234</a>
                                 </li>
 
-                                <li>
+                                {{-- <li>
                                     <a href="tel:+620632331234"><i class="far fa-phone-volume"></i> 0632-331234</a>
-                                </li>
+                                </li> --}}
                                 <!-- Hilangkan link login publik -->
                                 <!-- <li><a  href="{{ url('login.html')}}">Login</a></li> -->
                             </ul>

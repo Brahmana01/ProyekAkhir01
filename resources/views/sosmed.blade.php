@@ -25,10 +25,16 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fab fa-instagram"></i>
+                                    <a href="https://www.instagram.com/it.del?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit; display: inline-block;">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
                                 </div>
                                 <div class="contact-info-content">
-                                    <h5>Instagram</h5>
+                                    <h5>
+                                        <a href="https://www.instagram.com/it.del?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none; color: inherit;">
+                                            Instagram
+                                        </a>
+                                    </h5>
                                     <p>Sitoluama, Laguboti,Kab.Toba</p>
                                 </div>
                             </div>
@@ -36,10 +42,16 @@
                         <div class="col-md-3">
                             <div class="contact-info">
                                 <div class="contact-info-icon">
-                                    <i class="fab fa-facebook"></i>
+                                    <a href="https://www.facebook.com/share/1JgMe9XobN/" target="_blank" style="text-decoration: none; color: inherit; display: inline-block;">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
                                 </div>
                                 <div class="contact-info-content">
-                                    <h5>Call Us</h5>
+                                    <h5>
+                                        <a href="https://www.facebook.com/share/1JgMe9XobN/" target="_blank" style="text-decoration: none; color: inherit;">
+                                            Facebook
+                                        </a>
+                                    </h5>
                                     <p>+62 123 4565 789</p>
                                 </div>
                             </div>
