@@ -23,8 +23,48 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-</head>
+    <style>
+        /* Gaya default (untuk semua layar, termasuk mobile) */
 
+        /* Gaya logo default (ukuran lebih kecil untuk mobile) */
+        .navbar-brand img {
+            width: 120px; /* Ukuran default untuk mobile */
+        }
+
+        /* Sembunyikan elemen di mobile */
+        .hide-on-mobile {
+            display: none;
+        }
+
+        /* Media query untuk layar yang lebih besar dari mobile (tablet ke atas) */
+        @media (min-width: 768px) {
+            /* Di dalam sini, Anda menimpa gaya untuk layar yang lebih besar */
+
+            /* Tampilkan elemen yang disembunyikan di mobile */
+            .hide-on-mobile {
+                display: block; /* Tampilkan di tablet dan desktop */
+            }
+
+            /* Mengubah tata letak header */
+            .header-top-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            /* Ukuran logo pada layar yang lebih besar */
+            .navbar-brand img {
+                width: 200px; /* Ukuran logo yang lebih besar */
+            }
+
+            /* Contoh tambahan: Mengubah ukuran font header pada layar yang lebih besar */
+            .header-top-contact ul li a {
+                font-size: 14px; /* Ukuran font yang lebih besar untuk layar yang lebih besar */
+            }
+        }
+    </style>
+
+</head>
 
 <body>
 
@@ -38,9 +78,7 @@
     </div>
     <!-- preloader end -->
 
-
-
-<header class="header">
+    <header class="header">
         <!-- header top -->
         <div class="header-top">
             <div class="container">
@@ -67,9 +105,8 @@
                                 <li>
                                     <a href="tel:+620632331234"><i class="far fa-phone-volume"></i> 0632-331234</a>
                                 </li>
-
                                 <li>
-                                    <a href="{{ route('admin.login') }}">
+                                    <a href="{{ route('admin.login') }}">  
                                         <i class="far fa-user"></i>
                                         Admin Login
                                     </a>
@@ -81,62 +118,58 @@
             </div>
         </div>
 
-
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container position-relative">
                     <a class="navbar-brand" href="index">
-                        <img src="http://www.del.ac.id/wp-content/uploads/2015/06/logox.png"  alt="D3 Teknologi Informasi">    
+                        <img src="http://www.del.ac.id/wp-content/uploads/2015/06/logox.png" alt="D3 Teknologi Informasi">
                     </a>
-                    
+
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link active" href="index">Home</a>
                             </li>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Profil Prodi</a>
-                                    <div class="mega-content">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Profil Prodi</a>
+                                <div class="mega-content">
                                     <div class="container-fluid">
-                                    <ul class="dropdown-menu fade-down">
-                                        <li><a class="dropdown-item" href="sejarah">Sejarah</a></li>
-                                        <li><a class="dropdown-item" href="about">Tentang D3 TI</a></li>
-                                        <li><a class="dropdown-item" href="visimisi">Visi Misi</a></li>
-                                        {{-- <li><a class="dropdown-item" href="strukturorganisasi">Struktur organisasi</a></li> --}}
-                                        <li class="dropdown-submenu">
-                                            <a class="dropdown-item dropdown-toggle" href="">Struktur organisasi</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="strukturorganisasi1">
-                                                    Struktur Wakil Rektor<br> Bidang akademik dan<br> Kemahasiswaan </a></li>
-                                                <li><a class="dropdown-item" href="strukturorganisasi2">
-                                                    Struktur Wakil Rektor<br> Bidang Perencanaan<br>Keuangan dan Sumber<br>Daya</a></li>
-                                                <li><a class="dropdown-item" href="strukturorganisasi3">
-                                                    Struktur Wakil Rektor<br> Bidang Kemitraan<br>Inovasi dan <br>Kewirausahaan</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="tujuan">Tujuan</a></li>
-                                        <li><a class="dropdown-item" href="strategi">Strategi Pembelajaran</a></li>
-                                    </ul>
+                                        <ul class="dropdown-menu fade-down">
+                                            <li><a class="dropdown-item" href="sejarah">Sejarah</a></li>
+                                            <li><a class="dropdown-item" href="about">Tentang D3 TI</a></li>
+                                            <li><a class="dropdown-item" href="visimisi">Visi Misi</a></li>
+                                            {{-- <li><a class="dropdown-item" href="strukturorganisasi">Struktur organisasi</a></li> --}}
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item dropdown-toggle" href="">Struktur organisasi</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="strukturorganisasi1">
+                                                            Struktur Wakil Rektor<br> Bidang akademik dan<br> Kemahasiswaan </a></li>
+                                                    <li><a class="dropdown-item" href="strukturorganisasi2">
+                                                            Struktur Wakil Rektor<br> Bidang Perencanaan<br>Keuangan dan Sumber<br>Daya</a></li>
+                                                    <li><a class="dropdown-item" href="strukturorganisasi3">
+                                                            Struktur Wakil Rektor<br> Bidang Kemitraan<br>Inovasi dan <br>Kewirausahaan</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="dropdown-item" href="tujuan">Tujuan</a></li>
+                                            <li><a class="dropdown-item" href="strategi">Strategi Pembelajaran</a></li>
+                                        </ul>
+                                    </div>
                                 </li>
 
-                            
                             <li class="nav-item"><a class="nav-link" href="kurikulum">Kurikulum</a></li>
-      
-                            <li class="nav-item"><a class="nav-link" href="{{route('beritas.indexPublic')}}">Berita</a></li>
-  
-                            <li class="nav-item"><a class="nav-link" href="{{route('pengumuman')}}">Pengumuman</a></li>      
-                            
-                            <li class="nav-item"><a class="nav-link" href="teacher">Lecturers</a></li>     
+                            <li class="nav-item"><a class="nav-link" href="berita">Berita</a></li>
+                            <li class="nav-item"><a class="nav-link" href="pengumuman">Pengumuman</a></li>
+                            <li class="nav-item"><a class="nav-link" href="teacher">Lecturers</a></li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dokumentasi</a>
                                 <ul class="dropdown-menu fade-down">
-                                    <li><a class="dropdown-item" href="{{route('galleries.index')}}">Galeri</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('videos.showPublic')}}">Video</a></li>
+                                    <li><a class="dropdown-item" href="galleries.index">Galeri</a></li>
+                                    <li><a class="dropdown-item" href="videos.showPublic">Video</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HubConnect</a>
                                 <ul class="dropdown-menu fade-down">
@@ -144,24 +177,22 @@
                                     <li><a class="dropdown-item" href="sosmed">Sosial Media</a></li>
                                 </ul>
                             </li>
-                            
-                            <li class="nav-item"><a class="nav-link" href="{{ route('prestasies.indexPublic')}}">Prestasi</a></li>
 
+                            <li class="nav-item"><a class="nav-link" href="prestasi">Prestasi</a></li>
                             <li class="nav-item"><a class="nav-link" href="course-2">Prospek_Karir</a></li>
-
-                            <li class="nav-item"><a class="nav-link" href="{{ route('alumni.index')}}">Alumni</a></li>
-
-
-                            <li class="nav-item"><a class="nav-link" href="facility">Fasilitas</a></li> 
-
-
-                            <li class="nav-item"><a class="nav-link" href="scholarship">Beasiswa</a></li> 
-
-
-                            <li class="nav-item"><a class="nav-link" href="kerjasama">Kerjasama</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="alumni.index">Alumni</a></li>
+                            <li class="nav-item"><a class="nav-link" href="facility">Fasilitas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="scholarship">Beasiswa</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kemitraan">Kerjasama</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
+
+    <!-- ... sisa kode Anda ... -->
+
+</body>
+
+</html>

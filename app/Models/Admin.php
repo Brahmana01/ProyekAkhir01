@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable; // Tambahkan ini
-use Illuminate\Notifications\Notifiable; // Tambahkan ini jika Anda menggunakan notifikasi
-use Laravel\Sanctum\HasApiTokens; // Tambahkan ini jika Anda menggunakan Sanctum
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Notifications\Notifiable;
 
-class Admin extends Authenticatable
+class Admin extends Authenticatable implements AuthenticatableContract
 {
-    use HasFactory, Notifiable, HasApiTokens; // Gunakan trait yang dibutuhkan
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.

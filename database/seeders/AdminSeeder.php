@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Admin; // Atau \App\Models\User jika Anda menggunakan tabel users
 
 class AdminSeeder extends Seeder
 {
@@ -13,37 +13,10 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        // Data Admin yang Akan Dimasukkan
-        $username = 'admin@gmail.com';  // Ganti dengan username yang Anda inginkan
-        $password = '12345678'; // Ganti dengan password yang Anda inginkan
-        $name = 'Administrator'; // Ganti dengan nama yang Anda inginkan
-
-        // Enkripsi Password
-        $hashedPassword = Hash::make($password);
-
-        // Cek Apakah Admin dengan Username Ini Sudah Ada
-        $existingAdmin = Admin::where('username', $username)->first();
-
-        if (!$existingAdmin) {
-            // Buat Admin Baru Jika Belum Ada
-            Admin::create([
-                'username' => $username,
-                'password' => $hashedPassword,
-                'name' => $name,
-            ]);
-
-            $this->command->info("Admin user created with username: $username and password: $password");
-        } else {
-            // Update Password Jika Admin Sudah Ada (Opsional - Hati-hati!)
-            // Jika Anda ingin selalu memperbarui password setiap kali seeder dijalankan,
-            // uncomment kode di bawah ini.  Namun, ini bisa menyebabkan masalah jika Anda
-            // memiliki admin lain yang menggunakan password yang berbeda.
-
-            // $existingAdmin->password = $hashedPassword;
-            // $existingAdmin->save();
-            // $this->command->info("Admin user password updated for username: $username");
-
-            $this->command->info("Admin user with username: $username already exists.");
-        }
+        Admin::create([ // Atau User::create jika menggunakan tabel users
+            'name' => 'Goklas H.A. Pandjaitan',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('12345678'), // Ganti 'password' dengan password yang lebih kuat
+        ]);
     }
 }
