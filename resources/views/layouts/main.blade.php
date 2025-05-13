@@ -106,10 +106,10 @@
                                     <a href="tel:+620632331234"><i class="far fa-phone-volume"></i> 0632-331234</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.login') }}">  
-                                        <i class="far fa-user"></i>
-                                        Admin Login
-                                    </a>
+                                        <a href="{{ route('admin.login') }}">  
+                                            <i class="far fa-user"></i>
+                                            Admin Login
+                                        </a>
                                 </li>
                             </ul>
                         </div>

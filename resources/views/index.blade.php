@@ -102,7 +102,6 @@
                     <div class="row g-4">
                         <div class="col-md-4 col-lg-2">
                             <div class="feature-item">
-                                <span class="count">01</span>
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/scholarship.svg" alt="">
                                 </div>
@@ -114,7 +113,6 @@
                         </div>
                         <div class="col-md-4 col-lg-2">
                             <div class="feature-item">
-                                <span class="count">02</span>
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/teacher.svg" alt="">
                                 </div>
@@ -137,7 +135,6 @@
                         </div>
                         <div class="col-md-4 col-lg-2">
                             <div class="feature-item">
-                                <span class="count">03</span>
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/library.svg" alt="">
                                 </div>
@@ -149,7 +146,6 @@
                         </div>
                         <div class="col-md-4 col-lg-2">
                             <div class="feature-item">
-                                <span class="count">03</span>
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/library.svg" alt="">
                                 </div>
@@ -161,7 +157,6 @@
                         </div>
                         <div class="col-md-4 col-lg-2">
                             <div class="feature-item">
-                                <span class="count">04</span>
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/money.svg" alt="">
                                 </div>

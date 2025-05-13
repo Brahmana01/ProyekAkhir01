@@ -36,6 +36,36 @@
             display: none;
         }
 
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 20px;
+            border-right: 1px solid #dee2e6; /* Light border */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 8px 12px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #e9ecef; /* Lighter grey on hover */
+        }
+
+
         /* Media query untuk layar yang lebih besar dari mobile (tablet ke atas) */
         @media (min-width: 768px) {
             /* Di dalam sini, Anda menimpa gaya untuk layar yang lebih besar */
@@ -97,7 +127,7 @@
                                     <a href="tel:+620632331234"><i class="far fa-phone-volume"></i> 0632-331234</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/') }}">  
+                                    <a href="{{ url('/') }}">
                                         <i class="far fa-user"></i>
                                         Home
                                     </a>
@@ -109,71 +139,92 @@
             </div>
         </div>
 
-        
+
     </header>
 
-    <!-- ... sisa kode Anda ... -->
-
-</body>
-
+    <!-- Main Content Area -->
     <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                    <div class="position-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('lecturers.index') }}">
+                                    Lecturers
+                                </a>
+                            </li>
+                            <!-- Tambahkan menu navigasi lainnya di sini -->
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Content -->
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="login-area py-120">
+                        <div class="container">
+                            <div class="col-md-5 mx-auto">
+                                <div class="login-form">
+                                    <div class="login-header">
+                                        <img src="{{ asset('assets/img/logo/02.ico') }}" alt="Logo">
+                                        <p>Login dengan akun admin Anda!</p>
+                                    </div>
+
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif
+
+                                    <form method="POST" action="{{ route('admin.postLogin') }}">
+                                        @csrf
+
+                                        <div class="form-group">
+                                            <label>Email Address</label>
+                                            <input type="email" class="form-control" name="email" placeholder="Your Email" value="{{ old('email') }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Your Password" required>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="remember" id="remember" name="remember">
+                                                <label class="form-check-label" for="remember">
+                                                    Remember Me
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> Login</button>
+                                        </div>
 
 
-        <!-- login area -->
-        <div class="login-area py-120">
-            <div class="container">
-                <div class="col-md-5 mx-auto">
-                    <div class="login-form">
-                        <div class="login-header">
-                            <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo">
-                            <p>Login dengan akun admin Anda</p>
-                        </div>
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-
-                        <form method="POST" action="{{ route('admin.postLogin') }}">
-                            @csrf
-
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" value="{{ old('email') }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="password" placeholder="Your Password" required>
-                            </div>
-                            <div class="d-flex justify-content-between mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="remember" id="remember" name="remember">
-                                    <label class="form-check-label" for="remember">
-                                        Remember Me
-                                    </label>
+                                    </form>
+                                    {{--
+                                    <div class="login-footer">
+                                        <p>Don't have an account? <a href="register.html">Register.</a></p>
+                                    </div>
+                                    --}}
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> Login</button>
-                            </div>
-                            
-                            
-                        </form>
-                        {{-- <div class="login-footer">
-                            <p>Don't have an account? <a href="register.html">Register.</a></p>
-                        </div> --}}
+                        </div>
                     </div>
-                </div>
+                    @yield('content')
+                </main>
             </div>
         </div>
-        <!-- login area end -->
-
     </main>
 
 
-@include('layouts.footer')
+    @include('layouts.footer')

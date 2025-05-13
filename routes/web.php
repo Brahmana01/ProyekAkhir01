@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController; // Tambahkan baris ini
+use App\Http\Controllers\Admin\VideoController; // Tambahkan baris ini
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,30 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         // Rute untuk dashboard admin
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
+        // **Route untuk CRUD Videos**
+
+        // Daftar Video
+        Route::get('/videos', [VideoController::class, 'index'])->name('admin.videos.index');
+
+        // Form Tambah Video
+        Route::get('/videos/create', [VideoController::class, 'create'])->name('admin.videos.create');
+
+        // Simpan Video Baru
+        Route::post('/videos', [VideoController::class, 'store'])->name('admin.videos.store');
+
+        // Detail Video
+        Route::get('/videos/{video}', [VideoController::class, 'show'])->name('admin.videos.show');
+
+        // Form Edit Video
+        Route::get('/videos/{video}/edit', [VideoController::class, 'edit'])->name('admin.videos.edit');
+
+        // Update Video
+        Route::put('/videos/{video}', [VideoController::class, 'update'])->name('admin.videos.update');
+        Route::patch('/videos/{video}', [VideoController::class, 'update']); // Tambahkan ini jika Anda ingin mendukung PATCH
+
+        // Hapus Video
+        Route::delete('/videos/{video}', [VideoController::class, 'destroy'])->name('admin.videos.destroy');
     });
 
 });
