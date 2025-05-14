@@ -7,45 +7,61 @@
         </div>
 
         <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-3">NIP</dt>
-                <dd class="col-sm-9">{{ $lecturer->nip }}</dd>
+            <div class="mb-3">
+                <label class="form-label">NIP:</label>
+                <p>{{ $lecturer->nip }}</p>
+            </div>
 
-                <dt class="col-sm-3">Nama</dt>
-                <dd class="col-sm-9">{{ $lecturer->name }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Nama:</label>
+                <p>{{ $lecturer->name }}</p>
+            </div>
 
-                <dt class="col-sm-3">Email</dt>
-                <dd class="col-sm-9">{{ $lecturer->email }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Gelar S1:</label>
+                <p>{{ $lecturer->bachelor_degree }}</p>
+            </div>
 
-                <dt class="col-sm-3">Gelar Sarjana</dt>
-                <dd class="col-sm-9">{{ $lecturer->bachelor_degree }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Gelar S2:</label>
+                <p>{{ $lecturer->master_degree }}</p>
+            </div>
 
-                <dt class="col-sm-3">Gelar Magister</dt>
-                <dd class="col-sm-9">{{ $lecturer->master_degree }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Gelar S3:</label>
+                <p>{{ $lecturer->doctor_degree }}</p>
+            </div>
 
-                <dt class="col-sm-3">Gelar Doktor</dt>
-                <dd class="col-sm-9">{{ $lecturer->doctor_degree }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Status:</label>
+                <p>{{ $lecturer->status }}</p>
+            </div>
 
-                <dt class="col-sm-3">Status</dt>
-                <dd class="col-sm-9">{{ $lecturer->status }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Pengalaman:</label>
+                <p>{{ $lecturer->experiences }}</p>
+            </div>
 
-                <dt class="col-sm-3">Pengalaman</dt>
-                <dd class="col-sm-9">{{ $lecturer->experiences }}</dd>
+            <div class="mb-3">
+                <label class="form-label">Email:</label>
+                <p>{{ $lecturer->email }}</p>
+            </div>
 
-                <dt class="col-sm-3">Gambar</dt>
-                <dd class="col-sm-9">
-                    @if($lecturer->image)
-                        <img src="{{ asset('storage/' . $lecturer->image) }}" alt="Gambar Dosen" width="200">
-                    @else
-                        Tidak Ada Gambar
-                    @endif
-                </dd>
+            <div class="mb-3">
+                <label class="form-label">Gambar:</label>
+                @if($lecturer->image)
+                    <img src="{{ asset('storage/' . $lecturer->image) }}" alt="Gambar Dosen" width="200">
+                @else
+                    <p>Tidak ada gambar</p>
+                @endif
+            </div>
 
-                <dt class="col-sm-3">Aktif</dt>
-                <dd class="col-sm-9">{{ $lecturer->active ? 'Ya' : 'Tidak' }}</dd>
-            </dl>
+            <div class="mb-3">
+                <label class="form-label">Aktif:</label>
+                <p>{{ $lecturer->active ? 'Ya' : 'Tidak' }}</p>
+            </div>
 
-            <a href="{{ route('lecturers.index') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('admin.lecturers.index') }}" class="btn btn-secondary">Kembali</a>
         </div>
     </div>
 @endsection

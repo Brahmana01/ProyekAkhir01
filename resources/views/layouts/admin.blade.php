@@ -164,6 +164,16 @@
                                 <span>Videos</span>
                             </a>
                         </li>
+
+                        <!-- **TAMBAHAN SIDEBAR LECTURERS** -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.lecturers.index') }}" class="nav-link">
+                                <i class="ph-users"></i>  <!-- Ganti dengan icon yang sesuai -->
+                                <span>Lecturers</span>
+                            </a>
+                        </li>
+                        <!-- **AKHIR TAMBAHAN SIDEBAR LECTURERS** -->
+
                         <!-- Tambahkan menu sidebar lainnya di sini -->
 
                     </ul>

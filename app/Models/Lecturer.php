@@ -9,6 +9,10 @@ class Lecturer extends Model
 {
     use HasFactory;
 
+    protected $table = 'lecturers';
+    protected $primaryKey = 'nip';
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = [
         'nip',
         'name',
@@ -21,10 +25,9 @@ class Lecturer extends Model
         'image',
         'created_by',
         'updated_by',
-        'active'
+        'active',
     ];
 
-    // Relasi dengan tabel User (untuk created_by dan updated_by)
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');

@@ -17,7 +17,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('lecturers.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.lecturers.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -31,30 +31,25 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="bachelor_degree" class="form-label">Gelar Sarjana</label>
+                    <label for="bachelor_degree" class="form-label">Gelar S1</label>
                     <input type="text" class="form-control" id="bachelor_degree" name="bachelor_degree" value="{{ old('bachelor_degree') }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="master_degree" class="form-label">Gelar Magister</label>
+                    <label for="master_degree" class="form-label">Gelar S2</label>
                     <input type="text" class="form-control" id="master_degree" name="master_degree" value="{{ old('master_degree') }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="doctor_degree" class="form-label">Gelar Doktor</label>
+                    <label for="doctor_degree" class="form-label">Gelar S3</label>
                     <input type="text" class="form-control" id="doctor_degree" name="doctor_degree" value="{{ old('doctor_degree') }}">
                 </div>
 
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
-                    <select class="form-select" id="status" name="status">
-                        <option value="0">Tidak Aktif</option>
-                        <option value="1">Aktif</option>
+                    <select class="form-control" id="status" name="status" required>
+                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Aktif</option>
+                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Tidak Aktif</option>
                     </select>
                 </div>
 
@@ -64,20 +59,25 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label">Gambar</label>
                     <input type="file" class="form-control" id="image" name="image">
                 </div>
 
                 <div class="mb-3">
                     <label for="active" class="form-label">Aktif</label>
-                    <select class="form-select" id="active" name="active">
-                        <option value="1">Ya</option>
-                        <option value="0">Tidak</option>
+                    <select class="form-control" id="active" name="active" required>
+                        <option value="1" {{ old('active') == 1 ? 'selected' : '' }}>Ya</option>
+                        <option value="0" {{ old('active') == 0 ? 'selected' : '' }}>Tidak</option>
                     </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('lecturers.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('admin.lecturers.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

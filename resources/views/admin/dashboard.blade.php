@@ -164,6 +164,15 @@
                                 <span>Videos</span>
                             </a>
                         </li>
+
+                        <!-- Tambahkan menu Lecturers di sini -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.lecturers.index') }}" class="nav-link">
+                                <i class="ph-users"></i> <!-- Ikon untuk Dosen, bisa diganti -->
+                                <span>Lecturers</span>
+                            </a>
+                        </li>
+
                         <!-- Tambahkan menu sidebar lainnya di sini -->
 
                     </ul>

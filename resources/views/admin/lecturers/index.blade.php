@@ -5,7 +5,7 @@
         <div class="card-header">
             <h5 class="mb-0">Daftar Dosen</h5>
             <div class="ms-auto">
-                <a href="{{ route('lecturers.create') }}" class="btn btn-primary">Tambah Dosen</a>
+                <a href="{{ route('admin.lecturers.create') }}" class="btn btn-primary">Tambah Dosen</a>
             </div>
         </div>
 
@@ -20,7 +20,6 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>NIP</th>
                             <th>Nama</th>
                             <th>Email</th>
@@ -32,16 +31,15 @@
                     <tbody>
                         @foreach($lecturers as $lecturer)
                             <tr>
-                                <td>{{ $lecturer->id }}</td>
                                 <td>{{ $lecturer->nip }}</td>
                                 <td>{{ $lecturer->name }}</td>
                                 <td>{{ $lecturer->email }}</td>
                                 <td>{{ $lecturer->status }}</td>
                                 <td>{{ $lecturer->active ? 'Ya' : 'Tidak' }}</td>
                                 <td>
-                                    <a href="{{ route('lecturers.show', $lecturer->id) }}" class="btn btn-sm btn-info">Lihat</a>
-                                    <a href="{{ route('lecturers.edit', $lecturer->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                    <form action="{{ route('lecturers.destroy', $lecturer->id) }}" method="POST" style="display: inline-block;">
+                                    <a href="{{ route('admin.lecturers.show', $lecturer->nip) }}" class="btn btn-sm btn-info">Lihat</a>
+                                    <a href="{{ route('admin.lecturers.edit', $lecturer->nip) }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="{{ route('admin.lecturers.destroy', $lecturer->nip) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus dosen ini?')">Hapus</button>
