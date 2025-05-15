@@ -21,12 +21,12 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="nip" class="form-label">NIP</label>
+                    <label for="nip" class="form-label">NIP *</label>
                     <input type="text" class="form-control" id="nip" name="nip" value="{{ old('nip') }}" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
+                    <label for="name" class="form-label">Nama *</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                 </div>
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
+                    <label for="status" class="form-label">Status Pendidikan *</label>
                     <select class="form-control" id="status" name="status" required>
                         <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Aktif</option>
                         <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Tidak Aktif</option>
@@ -54,25 +54,25 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="experiences" class="form-label">Pengalaman</label>
+                    <label for="experiences" class="form-label">Pengalaman *</label>
                     <textarea class="form-control" id="experiences" name="experiences">{{ old('experiences') }}</textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email *</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Gambar</label>
+                    <label for="image" class="form-label">Gambar *</label>
                     <input type="file" class="form-control" id="image" name="image">
                 </div>
 
                 <div class="mb-3">
-                    <label for="active" class="form-label">Aktif</label>
+                    <label for="active" class="form-label">Status Pengajar *</label>
                     <select class="form-control" id="active" name="active" required>
-                        <option value="1" {{ old('active') == 1 ? 'selected' : '' }}>Ya</option>
-                        <option value="0" {{ old('active') == 0 ? 'selected' : '' }}>Tidak</option>
+                        <option value="1" {{ old('active') == 1 ? 'selected' : '' }}>Aktif</option>
+                        <option value="0" {{ old('active') == 0 ? 'selected' : '' }}>Tidak Aktif</option>
                     </select>
                 </div>
 

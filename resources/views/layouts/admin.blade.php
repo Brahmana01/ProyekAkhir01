@@ -72,7 +72,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item nav-item-dropdown-lg dropdown ms-lg-2">
+                {{-- <li class="nav-item nav-item-dropdown-lg dropdown ms-lg-2">
                     <a href="#" class="navbar-nav-link navbar-nav-link-icon rounded-pill" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                         <i class="ph-chats"></i>
                         <span class="badge bg-yellow text-black position-absolute top-0 end-0 translate-middle-top zindex-1 rounded-pill mt-1 me-1">8</span>
@@ -81,7 +81,7 @@
                     <div class="dropdown-menu wmin-lg-400 p-0">
                         <!-- Isi dropdown chats -->
                     </div>
-                </li>
+                </li> --}}
             </ul>
 
             <div class="navbar-collapse justify-content-center flex-lg-1 order-2 order-lg-1 collapse" id="navbar_search">
@@ -89,12 +89,12 @@
             </div>
 
             <ul class="nav flex-row justify-content-end order-1 order-lg-2">
-                <li class="nav-item ms-lg-2">
+                {{-- <li class="nav-item ms-lg-2">
                     <a href="#" class="navbar-nav-link navbar-nav-link-icon rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#notifications">
                         <i class="ph-bell"></i>
                         <span class="badge bg-yellow text-black position-absolute top-0 end-0 translate-middle-top zindex-1 rounded-pill mt-1 me-1">2</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item ms-lg-2">
                     <!-- Tombol Logout -->

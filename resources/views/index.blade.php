@@ -6,7 +6,7 @@
         <!-- hero slider -->
         <div class="hero-section">
             <div class="hero-slider owl-carousel owl-theme">
-                <div class="hero-single" style="background: url(assets/img/slider/slider-1.jpg)">
+                <div class="hero-single" style="background: url(..assets/img/slider/slider-1.jpg)">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-lg-7">
@@ -20,7 +20,7 @@
                                     </h1>
                                     <p data-animation="fadeInLeft" data-delay=".75s">
                                         <p data-animation="fadeInLeft" data-delay=".75s">
-                                            Program studi dari kampus IT del yang sudah berdiri sejak 2003, yang berdekatan 
+                                            Program studi dari kampus IT del yang sudah berdiri sejak 2003, yang berdekatan
                                             dengan berdirinya kampus IT del.
                                     </p>
                                     <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-single" style="background: url(assets/img/slider/slider-2.jpg)">
+                <div class="hero-single" style="background: url(..assets/img/slider/slider-2.jpg)">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-lg-7">
@@ -46,10 +46,10 @@
                                         D3 Teknologi Informasi
                                     </h1>
                                     <p data-animation="fadeInLeft" data-delay=".75s">
-                                        Program Studi D3 Teknologi Informasi hadir sebagai wadah pendidikan 
-                                        yang berfokus pada pengembangan keterampilan praktis dan pengetahuan teknologi terkini. 
-                                        Kami berkomitmen mencetak lulusan yang kreatif, kompeten, dan profesional, 
-                                        siap menghadapi tantangan industri digital dengan kemampuan teknis yang unggul 
+                                        Program Studi D3 Teknologi Informasi hadir sebagai wadah pendidikan
+                                        yang berfokus pada pengembangan keterampilan praktis dan pengetahuan teknologi terkini.
+                                        Kami berkomitmen mencetak lulusan yang kreatif, kompeten, dan profesional,
+                                        siap menghadapi tantangan industri digital dengan kemampuan teknis yang unggul
                                         dan inovasi berkelanjutan
                                     </p>
                                     <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-single" style="background: url(assets/img/slider/slider-3.jpg)">
+                <div class="hero-single" style="background: url(..assets/img/slider/slider-1.jpg)">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-lg-7">
@@ -75,7 +75,7 @@
                                         Keras-Gila-Berbahaya
                                     </h1>
                                     <p data-animation="fadeInLeft" data-delay=".75s">
-                                        Mengandung makna mahasiswa yang tangguh dan kuat dalam situasi apapun, mampu berpikir kritis, siap bersaing serta 
+                                        Mengandung makna mahasiswa yang tangguh dan kuat dalam situasi apapun, mampu berpikir kritis, siap bersaing serta
                                         Program Studi D3 Teknologi Informasi berkomitmen untuk menghasilkan
                                          lulusan yang berkualitas, berkompeten, dan siap bersaing di dunia industri digital.
                                     </p>
@@ -208,11 +208,11 @@
                             </div>
                             <p class="about-text">
                                 Program Studi Teknologi Informasi Diploma Tiga  adalah salah satu dari 3 (tiga)
-                                program studi yang dikelola oleh Institut Teknologi Del (IT Del) yang berdiri 
-                                pada tahun 2001 sesuai SK No. 222/D/O/2001 tertanggal 28 September 2001 dengan 
+                                program studi yang dikelola oleh Institut Teknologi Del (IT Del) yang berdiri
+                                pada tahun 2001 sesuai SK No. 222/D/O/2001 tertanggal 28 September 2001 dengan
                                 nama Program Studi Teknologi Informasi. Program studi ini berlokasi di Jl. Sisingamangaraja,
                                Desa Sitoluama, Kecamatan Laguboti, Toba Samosir, Propinsi Sumatera Utara berjarak
-                               kurang lebih 200 km (lima jam perjalanan mobil) dari Medan sebagai Ibukota 
+                               kurang lebih 200 km (lima jam perjalanan mobil) dari Medan sebagai Ibukota
                                Propinsi Sumatera Utara. Desa Sitoluama adalah suatu desa kecil yang berada di
                                 tepi Danau Toba dan dilalui oleh jalan raya lintas propinsi dan berjarak sekitar
                                  10 KM dari Balige sebagai ibukota Kabupaten Tobasa.
@@ -592,7 +592,7 @@
             </div>
         </div>
         <!-- video-area end -->
-        
+
 
         <!-- team-area -->
         <div class="team-area py-120">
@@ -692,7 +692,7 @@
             </div>
         </div>
         <!-- team-area end -->
-        
+
 
         <!-- choose-area -->
         <div class="choose-area pt-80 pb-80">

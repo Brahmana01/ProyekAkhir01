@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\Admin\LecturerController; 
+use App\Http\Controllers\Admin\LecturerController;
 use App\Http\Controllers\Admin\AchievementController;
 use App\Http\Controllers\Admin\AnnouncementController;
+use App\Http\Controllers\GuestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,8 @@ use App\Http\Controllers\Admin\AnnouncementController;
 Route::get('/', function () {
     return view('index');
 });
+
+
 
 // Route untuk halaman statis lainnya (menggunakan cara yang lebih ringkas)
 $staticPages = [
@@ -120,3 +124,8 @@ Route::prefix('admin')->group(function () {
         Route::resource('announcements', AnnouncementController::class, ['names' => 'admin.announcements']);
     });
 });
+
+Route::get('/lecturers', [GuestController::class, 'lecturers'])->name('lecturers');
+Route::get('/announcements', [GuestController::class, 'announcement'])->name('announcements');
+Route::get('/alumni', [GuestController::class, 'alumni'])->name('alumni');
+Route::get('/kerjasama', [GuestController::class, 'kemitraan'])->name('kemitraan');
