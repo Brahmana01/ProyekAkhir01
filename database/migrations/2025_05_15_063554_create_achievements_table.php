@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('achievements', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
+            $table->integer('year');
             $table->string('name', 255);
             $table->string('image', 255)->nullable();
-            $table->integer('year');
-            $table->date('started_date');
-            $table->date('ended_date');
+            $table->enum('level', ['internasional', 'nasional', 'provinsi/wilayah', 'lokal']);
+            $table->date('start_date');
+            $table->date('end_date');
             $table->integer('position');
             $table->enum('role', ['mahasiswa', 'dosen']);
             $table->enum('type', ['akademik', 'non-akademik']);
-            $table->enum('level', ['internasional', 'nasional', 'provinsi/wilayah', 'lokal']);
             $table->timestamps();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

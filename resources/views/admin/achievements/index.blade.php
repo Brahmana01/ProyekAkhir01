@@ -20,15 +20,15 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Tahun</th>
                             <th>Nama</th>
                             <th>Gambar</th>
-                            <th>Tahun</th>
+                            <th>Level</th>
                             <th>Tanggal Mulai</th>
                             <th>Tanggal Selesai</th>
                             <th>Posisi</th>
-                            <th>Peran</th>
+                            <th>Role</th>
                             <th>Tipe</th>
-                            <th>Level</th>
                             <th>Aktif</th>
                             <th>Aksi</th>
                         </tr>
@@ -36,6 +36,7 @@
                     <tbody>
                         @foreach($achievements as $achievement)
                             <tr>
+                                <td>{{ $achievement->year }}</td>
                                 <td>{{ $achievement->name }}</td>
                                 <td>
                                     @if($achievement->image)
@@ -44,13 +45,12 @@
                                         Tidak Ada Gambar
                                     @endif
                                 </td>
-                                <td>{{ $achievement->year }}</td>
-                                <td>{{ $achievement->started_date }}</td>
-                                <td>{{ $achievement->ended_date }}</td>
+                                <td>{{ $achievement->level }}</td>
+                                <td>{{ $achievement->start_date }}</td>
+                                <td>{{ $achievement->end_date }}</td>
                                 <td>{{ $achievement->position }}</td>
                                 <td>{{ $achievement->role }}</td>
                                 <td>{{ $achievement->type }}</td>
-                                <td>{{ $achievement->level }}</td>
                                 <td>{{ $achievement->active ? 'Ya' : 'Tidak' }}</td>
                                 <td>
                                     <a href="{{ route('admin.achievements.show', $achievement->id) }}" class="btn btn-sm btn-info">Lihat</a>

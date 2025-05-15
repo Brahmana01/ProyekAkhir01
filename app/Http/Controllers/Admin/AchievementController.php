@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Achievement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage; // Import Storage Facade
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class AchievementController extends Controller
@@ -15,8 +15,8 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        $achievements = Achievement::all(); // Ambil semua data achievement
-        return view('admin.achievements.index', compact('achievements')); // Kirim data ke view
+        $achievements = Achievement::all();
+        return view('admin.achievements.index', compact('achievements'));
     }
 
     /**
@@ -24,7 +24,7 @@ class AchievementController extends Controller
      */
     public function create()
     {
-        return view('admin.achievements.create'); // Tampilkan form create
+        return view('admin.achievements.create');
     }
 
     /**
@@ -32,17 +32,16 @@ class AchievementController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi data
         $validator = Validator::make($request->all(), [
+            'year' => 'required|integer',
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validasi image
-            'year' => 'required|integer',
-            'started_date' => 'required|date',
-            'ended_date' => 'required|date',
+            'level' => 'required|in:internasional,nasional,provinsi/wilayah,lokal',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'position' => 'required|integer',
             'role' => 'required|in:mahasiswa,dosen',
             'type' => 'required|in:akademik,non-akademik',
-            'level' => 'required|in:internasional,nasional,provinsi/wilayah,lokal',
             'active' => 'nullable|integer|in:0,1',
         ]);
 
@@ -56,20 +55,18 @@ class AchievementController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/achievements', $imageName); // Simpan di storage/app/public/achievements
+            $image->storeAs('public/achievements', $imageName);
             $data['image'] = $imageName;
         }
-
 
         // Set created_by dan updated_by (contoh, ambil dari user yang login)
         $data['created_by'] = auth()->check() ? auth()->user()->id : null;
         $data['updated_by'] = auth()->check() ? auth()->user()->id : null;
         $data['active'] = $request->input('active', 1);
 
-        // Simpan data ke database
         Achievement::create($data);
 
-        return redirect()->route('admin.achievements.index')->with('success', 'Achievement created successfully.'); // Redirect dengan pesan sukses
+        return redirect()->route('admin.achievements.index')->with('success', 'Pencapaian berhasil ditambahkan.');
     }
 
     /**
@@ -77,7 +74,7 @@ class AchievementController extends Controller
      */
     public function show(Achievement $achievement)
     {
-        return view('admin.achievements.show', compact('achievement')); // Tampilkan detail achievement
+        return view('admin.achievements.show', compact('achievement'));
     }
 
     /**
@@ -85,7 +82,7 @@ class AchievementController extends Controller
      */
     public function edit(Achievement $achievement)
     {
-        return view('admin.achievements.edit', compact('achievement')); // Tampilkan form edit
+        return view('admin.achievements.edit', compact('achievement'));
     }
 
     /**
@@ -93,17 +90,16 @@ class AchievementController extends Controller
      */
     public function update(Request $request, Achievement $achievement)
     {
-          // Validasi data
-          $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
+             'year' => 'required|integer',
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validasi image
-            'year' => 'required|integer',
-            'started_date' => 'required|date',
-            'ended_date' => 'required|date',
+            'level' => 'required|in:internasional,nasional,provinsi/wilayah,lokal',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'position' => 'required|integer',
             'role' => 'required|in:mahasiswa,dosen',
             'type' => 'required|in:akademik,non-akademik',
-            'level' => 'required|in:internasional,nasional,provinsi/wilayah,lokal',
             'active' => 'nullable|integer|in:0,1',
         ]);
 
@@ -122,7 +118,7 @@ class AchievementController extends Controller
 
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/achievements', $imageName); // Simpan di storage/app/public/achievements
+            $image->storeAs('public/achievements', $imageName);
             $data['image'] = $imageName;
         }
 
@@ -132,7 +128,7 @@ class AchievementController extends Controller
 
         $achievement->update($data);
 
-        return redirect()->route('admin.achievements.index')->with('success', 'Achievement updated successfully.'); // Redirect dengan pesan sukses
+        return redirect()->route('admin.achievements.index')->with('success', 'Pencapaian berhasil diperbarui.');
     }
 
     /**
@@ -146,6 +142,6 @@ class AchievementController extends Controller
         }
 
         $achievement->delete();
-        return redirect()->route('admin.achievements.index')->with('success', 'Achievement deleted successfully.'); // Redirect dengan pesan sukses
+        return redirect()->route('admin.achievements.index')->with('success', 'Pencapaian berhasil dihapus.');
     }
 }

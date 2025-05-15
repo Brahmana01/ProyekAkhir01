@@ -3,49 +3,90 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h5 class="mb-0">Detail Pencapaian</h5>
+            <h5 class="mb-0">Tambah Pencapaian</h5>
         </div>
 
         <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-3">Nama</dt>
-                <dd class="col-sm-9">{{ $achievement->name }}</dd>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-                <dt class="col-sm-3">Gambar</dt>
-                <dd class="col-sm-9">
-                    @if($achievement->image)
-                        <img src="{{ asset('storage/achievements/' . $achievement->image) }}" alt="{{ $achievement->name }}" width="100">
-                    @else
-                        Tidak Ada Gambar
-                    @endif
-                </dd>
+            <form action="{{ route('admin.achievements.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-                <dt class="col-sm-3">Tahun</dt>
-                <dd class="col-sm-9">{{ $achievement->year }}</dd>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Tahun</label>
+                    <input type="number" class="form-control" id="year" name="year" value="{{ old('year') }}" required>
+                </div>
 
-                <dt class="col-sm-3">Tanggal Mulai</dt>
-                <dd class="col-sm-9">{{ $achievement->started_date }}</dd>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                </div>
 
-                <dt class="col-sm-3">Tanggal Selesai</dt>
-                <dd class="col-sm-9">{{ $achievement->ended_date }}</dd>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Gambar</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
 
-                <dt class="col-sm-3">Posisi</dt>
-                <dd class="col-sm-9">{{ $achievement->position }}</dd>
+                <div class="mb-3">
+                    <label for="level" class="form-label">Level</label>
+                    <select class="form-select" id="level" name="level" required>
+                        <option value="internasional" {{ old('level') == 'internasional' ? 'selected' : '' }}>Internasional</option>
+                        <option value="nasional" {{ old('level') == 'nasional' ? 'selected' : '' }}>Nasional</option>
+                        <option value="provinsi/wilayah" {{ old('level') == 'provinsi/wilayah' ? 'selected' : '' }}>Provinsi/Wilayah</option>
+                        <option value="lokal" {{ old('level') == 'lokal' ? 'selected' : '' }}>Lokal</option>
+                    </select>
+                </div>
 
-                <dt class="col-sm-3">Peran</dt>
-                <dd class="col-sm-9">{{ $achievement->role }}</dd>
+                <div class="mb-3">
+                    <label for="start_date" class="form-label">Tanggal Mulai</label>
+                    <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date') }}" required>
+                </div>
 
-                <dt class="col-sm-3">Tipe</dt>
-                <dd class="col-sm-9">{{ $achievement->type }}</dd>
+                <div class="mb-3">
+                    <label for="end_date" class="form-label">Tanggal Selesai</label>
+                    <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date') }}" required>
+                </div>
 
-                <dt class="col-sm-3">Level</dt>
-                <dd class="col-sm-9">{{ $achievement->level }}</dd>
+                <div class="mb-3">
+                    <label for="position" class="form-label">Posisi</label>
+                    <input type="number" class="form-control" id="position" name="position" value="{{ old('position') }}" required>
+                </div>
 
-                <dt class="col-sm-3">Aktif</dt>
-                <dd class="col-sm-9">{{ $achievement->active ? 'Ya' : 'Tidak' }}</dd>
-            </dl>
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-select" id="role" name="role" required>
+                        <option value="mahasiswa" {{ old('role') == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                        <option value="dosen" {{ old('role') == 'dosen' ? 'selected' : '' }}>Dosen</option>
+                    </select>
+                </div>
 
-            <a href="{{ route('admin.achievements.index') }}" class="btn btn-secondary">Kembali</a>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipe</label>
+                    <select class="form-select" id="type" name="type" required>
+                        <option value="akademik" {{ old('type') == 'akademik' ? 'selected' : '' }}>Akademik</option>
+                        <option value="non-akademik" {{ old('type') == 'non-akademik' ? 'selected' : '' }}>Non-Akademik</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="active" class="form-label">Aktif</label>
+                    <select class="form-select" id="active" name="active">
+                        <option value="1" {{ old('active', 1) == '1' ? 'selected' : '' }}>Ya</option>
+                        <option value="0" {{ old('active') == '0' ? 'selected' : '' }}>Tidak</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{ route('admin.achievements.index') }}" class="btn btn-secondary">Batal</a>
+            </form>
         </div>
     </div>
 @endsection

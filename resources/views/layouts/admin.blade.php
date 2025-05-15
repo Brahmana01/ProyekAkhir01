@@ -173,12 +173,6 @@
                             </a>
                         </li>
                         <!-- **AKHIR TAMBAHAN SIDEBAR LECTURERS** -->
-                        <li class="nav-item">
-                            <a href="{{ route('admin.achievements.index') }}" class="nav-link">
-                                <i class="ph-trophy"></i>  <!-- Ganti dengan icon yang sesuai -->
-                                <span>Achievements</span>
-                            </a>
-                        </li>
 
                         <!-- **TAMBAHAN SIDEBAR ANNOUNCEMENTS** -->
                         <li class="nav-item">
@@ -188,6 +182,12 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="{{ route('admin.achievements.index') }}" class="nav-link">
+                                <i class="ph-trophy"></i>  <!-- Ganti dengan icon yang sesuai -->
+                                <span>Achievements</span>
+                            </a>
+                        </li>
                         <!-- Tambahkan menu sidebar lainnya di sini -->
 
                     </ul>

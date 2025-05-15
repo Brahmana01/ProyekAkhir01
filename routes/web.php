@@ -6,10 +6,8 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\LecturerController;
-use App\Http\Controllers\Admin\AchievementController;
+use App\Http\Controllers\Admin\AchievementController; // Tambahkan ini!
 use App\Http\Controllers\Admin\AnnouncementController;
-use App\Http\Controllers\GuestController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +23,6 @@ use App\Http\Controllers\GuestController;
 Route::get('/', function () {
     return view('index');
 });
-
-
 
 // Route untuk halaman statis lainnya (menggunakan cara yang lebih ringkas)
 $staticPages = [
@@ -117,15 +113,10 @@ Route::prefix('admin')->group(function () {
         // **Route untuk CRUD Lecturers (MANUAL) - TANPA MIDDLEWARE admin**
         Route::resource('lecturers', LecturerController::class, ['names' => 'admin.lecturers']);
 
-        // **Route untuk CRUD Achievements (MANUAL)**
-        Route::resource('achievements', AchievementController::class, ['names' => 'admin.achievements']);
-
         // **Route untuk CRUD Announcements (MANUAL)**
         Route::resource('announcements', AnnouncementController::class, ['names' => 'admin.announcements']);
+
+         // **Route untuk CRUD Achievements (MANUAL)**
+        Route::resource('achievements', AchievementController::class, ['names' => 'admin.achievements']);
     });
 });
-
-Route::get('/lecturers', [GuestController::class, 'lecturers'])->name('lecturers');
-Route::get('/announcements', [GuestController::class, 'announcement'])->name('announcements');
-Route::get('/alumni', [GuestController::class, 'alumni'])->name('alumni');
-Route::get('/kerjasama', [GuestController::class, 'kemitraan'])->name('kemitraan');
