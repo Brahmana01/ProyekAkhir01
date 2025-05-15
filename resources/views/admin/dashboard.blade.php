@@ -165,11 +165,26 @@
                             </a>
                         </li>
 
-                        <!-- Tambahkan menu Lecturers di sini -->
+                        <!-- **TAMBAHAN SIDEBAR LECTURERS** -->
                         <li class="nav-item">
                             <a href="{{ route('admin.lecturers.index') }}" class="nav-link">
-                                <i class="ph-users"></i> <!-- Ikon untuk Dosen, bisa diganti -->
+                                <i class="ph-users"></i>  <!-- Ganti dengan icon yang sesuai -->
                                 <span>Lecturers</span>
+                            </a>
+                        </li>
+                        <!-- **AKHIR TAMBAHAN SIDEBAR LECTURERS** -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.achievements.index') }}" class="nav-link">
+                                <i class="ph-trophy"></i>  <!-- Ganti dengan icon yang sesuai -->
+                                <span>Achievements</span>
+                            </a>
+                        </li>
+
+                        <!-- **TAMBAHAN SIDEBAR ANNOUNCEMENTS** -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.announcements.index') }}" class="nav-link">
+                                <i class="ph-megaphone"></i>  <!-- Ganti dengan icon yang sesuai -->
+                                <span>Announcements</span>
                             </a>
                         </li>
 

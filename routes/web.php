@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\Admin\LecturerController; // Pastikan ini ada
+use App\Http\Controllers\Admin\LecturerController; 
+use App\Http\Controllers\Admin\AchievementController;
+use App\Http\Controllers\Admin\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,7 +103,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
     // Rute yang hanya bisa diakses setelah login (menggunakan middleware 'auth:admin')
-     
+    Route::middleware(['auth:admin'])->group(function () {
         // Rute untuk dashboard admin
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
@@ -109,5 +111,12 @@ Route::prefix('admin')->group(function () {
         Route::resource('videos', VideoController::class, ['names' => 'admin.videos']);
 
         // **Route untuk CRUD Lecturers (MANUAL) - TANPA MIDDLEWARE admin**
-         Route::resource('lecturers', LecturerController::class, ['names' => 'admin.lecturers']);
+        Route::resource('lecturers', LecturerController::class, ['names' => 'admin.lecturers']);
+
+        // **Route untuk CRUD Achievements (MANUAL)**
+        Route::resource('achievements', AchievementController::class, ['names' => 'admin.achievements']);
+
+        // **Route untuk CRUD Announcements (MANUAL)**
+        Route::resource('announcements', AnnouncementController::class, ['names' => 'admin.announcements']);
     });
+});
